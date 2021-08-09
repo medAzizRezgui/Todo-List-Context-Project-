@@ -1,11 +1,11 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import styles from "./TodoInput.module.css";
 
-import TodoContext from "../../context/todo-context";
+
 
 const TodoInput = () => {
   const [todo, setTodo] = useState("");
-  const { addTodo } = useContext(TodoContext);
+
 
   const onChangeHandler = (e) => {
     setTodo(e.target.value);
@@ -14,14 +14,6 @@ const TodoInput = () => {
   const onSubmitHandler = (e) => {
     e.preventDefault();
 
-    // {id: 111, text: 'Some text', complete: false}
-    const newTodo = {
-      id: Math.random(),
-      text: todo,
-      complete: false,
-    };
-
-    addTodo(newTodo);
 
     setTodo("");
   };
