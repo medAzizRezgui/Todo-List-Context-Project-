@@ -1,8 +1,7 @@
 import React from "react";
 import styles from "./TodoItem.module.css";
 
-const TodoItem = ({ text, complete }) => {
-
+const TodoItem = ({ text, clickToToggle, clickToDelete, complete }) => {
   return (
     <div className={styles.todoItem}>
       <span
@@ -11,12 +10,11 @@ const TodoItem = ({ text, complete }) => {
       >
         {text}
       </span>
-
       <div>
-        <button className={styles.todoItem__toggleBtn} >
+        <button className={styles.todoItem__toggleBtn} onClick={clickToToggle}>
           TOGGLE
         </button>
-        <button className={styles.todoItem__deleteBtn} >
+        <button className={styles.todoItem__deleteBtn} onClick={clickToDelete}>
           DELETE
         </button>
       </div>
